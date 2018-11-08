@@ -1,0 +1,328 @@
+[class*="chartView"] {
+	height:auto;
+	width: auto;
+	grid-template-columns: auto;
+	grid-template-rows: auto;
+	overflow: auto;
+	margin-left: 5px;
+
+}
+
+.qvobjectMod{
+	margin-bottom: 10px;
+	grid-area: chartspace;
+	display: inline-block;
+}
+
+.qvobjectMod h1{
+		padding: 5px !important;
+}
+
+.analyserchartwrapper {
+	 display: grid;
+	 height:300px;
+	 margin-bottom: 10px;
+	 grid-template-columns: 100%;
+	 grid-template-rows: auto 25px;
+	 grid-template-areas:
+		"chartspace"
+		"chartspace";
+}
+
+.chartSubNav{
+	 position: relative;
+	 box-sizing: border-box;
+	 width: auto;
+	 top: -6px;
+	 height: 26px;
+	 font-size: 0.75em;
+	 padding: 3px;
+	 grid-area: chartsubmenu;
+}
+
+.chartNavItem{
+	width:auto;
+	display: inline-block;
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+.chartSubNav i{
+	 margin-right: 5px;
+}
+
+
+/* Fix Table Header */
+.qvobjectMod article h1 {
+	margin-left:-10px !important;
+	padding-left: 15px !important;
+
+}
+
+.qvobjectMod article {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+#chartInclude{
+	position: relative;
+	overflow: none;
+	width: 100%;
+	height: 100%;
+}
+
+#anaylserHeader {
+	position: relative;
+	width: 100%;
+	height: 30px;
+
+}
+
+#analyserTitle{
+	float:left;
+	width: 50%;
+	display: inline-block;
+}
+
+#analyserSubViews{
+	float:left;
+	padding-right: 10px;
+	width: 50%;	padding-top: 5px;
+	display: inline-block;
+	clear:left;
+}
+
+#analyserSubViews ul li{
+	list-style: none;
+	margin-top: 5px;
+	margin-left:5px;
+	float:right;
+}
+#analyserSubViews li a{
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 0.75em
+}
+
+#analyserTitle h1 {
+	 padding: 5px;
+	 font-size: 1em;
+	 font-weight: normal;
+	 height: 25px;
+	 display: inline-block;
+}
+
+.qv-inner-object, article{
+	margin:0;
+	padding:0;
+}
+
+
+@media screen and (width: 320px) {
+		body {
+			font-size: 80%;
+		}
+}
+
+@media screen and (min-width: 769px) {
+	.analyserchartwrapper{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+	}
+
+	.chartSubNav{
+		 position: relative;
+		 box-sizing: border-box;
+		 width: auto;
+
+		 margin-right: 5px;
+		 font-size: 0.75em;
+		 height: 25px;
+		 padding: 3px;
+
+	}
+
+	.qvobjectMod{
+		 box-sizing: border-box;
+		 height: -moz-calc(100% - 5px);
+		 height: -webkit-calc(100% - 5px);
+		 height: calc(100% - 5px);
+		 margin-right: 5px;
+		 margin-bottom: 5px;
+ }
+
+
+
+	.chartitem1  {
+		grid-area: chartitem1
+	}
+	.chartitem2  {
+		grid-area: chartitem2
+	}
+	.chartitem3  {
+		grid-area: chartitem3
+	}
+
+	.chartitem4  {
+		grid-area: chartitem4
+	}
+
+
+	#chartInclude{
+		position: relative;
+		width: 100%;
+		height: -moz-calc(100% - 30px);
+		height: -webkit-calc(100% - 30px);
+		height: calc(100% - 30px);
+		margin: 0;
+		pading: 0;
+
+	}
+
+	#chartInclude .bnHelp  {
+		height: -moz-calc(100% - 7px);
+		height: -webkit-calc(100% - 7px);
+		height: calc(100% - 7px);
+		width: -moz-calc(100% - 7px);
+		width: -webkit-calc(100% - 7px);
+		width: calc(100% - 7px);
+		display: block;
+		box-sizing: border-box;
+		text-align: center;
+		vertical-align: middle;
+		left: 2px;
+		top: 0;
+		padding: 5px;
+	}
+
+
+	[class*="chartView"]{
+		height: -moz-calc(100% - 35px);
+		height: -webkit-calc(100% - 35px);
+		height: calc(100% - 35px);
+		width: 100%;
+		grid-template-columns: auto;
+		grid-template-rows: auto;
+		overflow: none;
+
+	}
+
+	.chartView2a, .chartView-1-1 {
+		display: grid;
+		min-height:250px;
+    grid-template-columns:auto;
+    grid-template-rows: 50% 50%;
+		grid-template-areas:
+			"chartitem1"
+			"chartitem2";
+  }
+
+	.chartView2b , .chartView-1_1 {
+		display: grid;
+		min-height:250px;
+    grid-template-columns: 50% 50%;
+		grid-template-rows: auto;
+		grid-template-areas:
+			"chartitem1 chartitem2";
+  }
+
+
+
+	.chartView3a, .chartView-1_2-3_3  {
+		display: grid;
+		min-height:250px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+		grid-template-areas:
+			"chartitem1 chartitem2"
+			"chartitem3 chartitem3";
+  }
+
+	.chartView3aBig, .chartView-1_2-3_3-3_3  {
+		display: grid;
+		min-height:250px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 33.3333% auto 33.3333%;
+		grid-template-areas:
+			"chartitem1 chartitem2"
+			"chartitem3 chartitem3"
+			"chartitem3 chartitem3";
+  }
+
+	.chartView3b, .chartView-1_1-2_3  {
+		display: grid;
+		min-height:250px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+		grid-template-areas:
+			"chartitem1 chartitem1"
+			"chartitem2 chartitem3";
+  }
+
+	.chartView3bBig, .chartView-1_1-1_1-2_3  {
+		display: grid;
+		min-height:250px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 33.3333% auto 33.3333%;
+		grid-template-areas:
+			"chartitem1 chartitem1"
+			"chartitem1 chartitem1"
+			"chartitem2 chartitem3";
+  }
+
+	.chartView3c, .chartView-1_2-1_3  {
+		display: grid;
+		min-height:250px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+		grid-template-areas:
+			"chartitem1 chartitem2"
+			"chartitem1 chartitem3";;
+  }
+
+	.chartView3d , .chartView-1_2-3_2 {
+		display: grid;
+		min-height:250px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+		grid-template-areas:
+			"chartitem1 chartitem2"
+			"chartitem3 chartitem2";;
+  }
+
+	.chartView4a, .chartView-1_2-3_4  {
+    display: grid;
+		min-height:250px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+		grid-template-areas:
+			"chartitem1 chartitem2"
+			"chartitem3 chartitem4";
+
+  }
+
+	.chartView6a , .chartView-1_2_3-4_5_6 {
+		display: grid;
+		min-height:250px;
+    grid-template-columns: 33.3333% auto 33.3333%;
+		grid-template-rows: auto;
+		grid-template-areas:
+			"chartitem1 chartitem2 chartitem3"
+			"chartitem4 chartitem5 chartitem6";
+  }
+
+	.chartView6b , .chartView-1_2_3-4_5_6 {
+		display: grid;
+		min-height:250px;
+    grid-template-columns: 50% 50%;
+		grid-template-rows: 33.3333% auto 33.3333%;
+		grid-template-areas:
+			"chartitem1 chartitem2"
+			"chartitem3 chartitem4"
+			"chartitem5 chartitem6";
+  }
+
+}

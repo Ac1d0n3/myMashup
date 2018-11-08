@@ -1,0 +1,237 @@
+
+#dashboard {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+
+.kpiHeader {
+  position:relative;
+  display:block;
+  padding: 0.2em  0.2em 0.2em 0.4em;
+  font-size: 1em;
+}
+
+.kpiContent{
+  position:relative;
+  display:block;
+  width: auto;
+  height:100%;
+  padding-top: 10px;
+  overflow: hidden;
+}
+
+.kpiContent:hover{
+  overflow: auto;
+}
+
+.kpiFooter {
+  position: relative;
+  font-size: 14px;
+  border-top: 1px solid #efefef;
+  width: 100%;
+}
+
+.kpiTop5View{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display:block;
+}
+
+.top5Grid{
+  position: relative;
+  display: grid;
+  height: 80%;
+  width: 100%;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 4vmin auto;
+  padding: 5px;
+}
+
+.kpiFooterMenue ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.kpiFooterMenue ul > li{
+  position: relative;
+  display:block;
+  width: auto;
+  padding: 0.2vmin;
+  white-space:nowrap;
+  float:left
+}
+
+.kpiFooterMenue ul li:hover ul{
+  visibility: visible;
+}
+
+.kpiFooterMenue ul li ul{
+  visibility: hidden;
+  list-style: none;
+  position: absolute;
+  z-index: 9999;
+  bottom: 3.1vmin;
+  width: auto;
+  border-top: 1px solid #efefef;
+    padding: 0.2vmin;
+}
+
+
+
+.kpiFooterMenue {
+  width: 100%
+}
+
+
+.kpiQuarterView {
+  height: auto;
+
+}
+
+.kpiContent table {
+  width: 90%;
+  margin:auto;
+  font-size: 0.7em;
+}
+
+.kpiContent td{
+  padding: 2.5px;
+  width:auto;
+  text-align: right;
+}
+
+.totalTop5{
+  text-align: center;
+  padding: 5px;
+}
+
+.kpiTop5View td{
+  text-align: left;
+}
+
+.y2yView thead td{
+  font-size: 9px;
+}
+
+.y2yView {
+  margin:0 auto;
+}
+
+.kpiFooterMenue {
+    text-align:right;
+}
+
+.kpiFooter a {
+    color: #afafaf;
+    font-size: 14px;
+}
+
+.kpi{
+  position: relative;
+  width:100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 27px auto 25px;
+}
+
+.kpiChart{
+  position: relative;
+  width: 80%;
+  height: 60px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.kpiChartFull{
+  position: absolute;
+  width: inherit;
+  width: 90%;
+  height: 85%;
+  margin: 0 auto;
+
+}
+
+
+.y2yView .cyLabel, .y2yView .cyValue, .y2yView .lyLabel, .y2yView .lyValue {
+  font-size: 1.3em;
+  white-space:nowrap;
+
+}
+
+.cyLabel, .cyValue, .lyLabel, .lyValue {
+  font-size: 1em;
+  white-space:nowrap;
+}
+
+.top5Grid .lyLabel, .top5Grid .cyLabel {
+  text-align: center;
+}
+
+
+.y2yView td.cyLabel, .y2yView td.lyLabel{
+  width: 80px;
+}
+
+
+@media screen and (min-width:769px) {
+
+  .responive {
+    position: relative;
+    width:100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 4.5vmin auto 3.5vmin;
+  }
+
+  .responive .top5Grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 4vmin auto;
+  }
+
+  .responive > .kpiHeader {
+    position:relative;
+    display:block;
+    padding: 0.2em  0.2em 0.2em 0.4em;
+    font-size: 2.5vmin;
+  }
+
+  .responive thead td{
+    font-size: 2vmin;
+  }
+
+  .responive .y2yView thead td{
+    font-size: 1vmin;
+  }
+
+  .responive .kpiFooter, .responive .kpiFooter a, .responive .InlineMenue{
+    font-size: 2vmin;
+  }
+
+  .responive table {
+    width: 90%;
+    margin:auto;
+    font-size: 2vmin;
+  }
+
+  .kpi{
+    box-sizing: border-box;
+    margin: 2px;
+    width:auto;
+  }
+
+  .viewGrid {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% auto;
+    padding: 5px;
+  }
+
+
+}

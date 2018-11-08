@@ -1,0 +1,192 @@
+
+
+
+
+/*
+		Coloring
+*/
+
+
+.active
+  { color: #8fc400 !important; }
+
+
+
+.filterGroupNav i, .bnCurSelectField i,.qvToolbar i, #sidebarmenu, #analyserSubViews li a, #nav ul li a
+, .kpiFooterMenue,.InlineMenue i
+  { color: #afafaf; }
+
+.filterGroupNav i:hover, #nav ul ul li a:hover,.qvToolbar i:hover,
+#analyserSubViews li a:hover, .chartSubNav a:hover, .cyLabel, .cyValue,
+#nav ul li a:not(.hasSubs):hover, .cyLabelTable, .cyValueTable,
+.kpiFooterMenue span:hover, .InlineMenue i:hover,#sidebarmenu i:hover
+  { color: #333 }
+
+.bookmarkList li a:hover, #footer, #header
+  { color: #fff }
+
+.bookmarkList li a:hover
+  { background-color: #afafaf; }
+
+.curSelectionBoxHeader, .bookmarkHeader
+  { color: #8fc400 }
+
+#analyserTitle h1, .lyLabel, .lyValue, .lyLabelTable, .lyValueTable
+  { color: #adadad; }
+
+.totalLabel, .totalValue
+  { color: #4065a0; }
+
+#headerOverlay, #innerOverlay, #Overlay, #contentOverlay,
+#content, #nav ul li a.active, .logo, #sidebarmenu, #container, .kpi, .qvobjectMod, .qvToolbar:hover,
+.kpiFooterMenue ul li ul
+  { background-color: #fff; }
+
+#footer, #header
+  { background-color: #8fc400; }
+
+.qvToolbar {
+  background-color: rgba(255,255,255,0.7);
+  border-top: 1px solid #efefef;
+}
+
+.logo div
+  { background: url("../img/qlogo.png");  background-size:cover;  }
+
+.bookmarkList li a, .bnCurSelectField, .coloredChartHeader h1, .kpiHeader, #nav ul li a,
+.kpiQuarterView tbody tr:nth-of-type(even), .kpiTop5View tbody tr:nth-of-type(even), #nav ul li
+  { background-color: #efefef; }
+
+#header, #nav ul ul li a
+  { border-bottom: 1px solid #efefef; }
+
+.bookmarkList li a, .kpi, .qvobjectMod,.kpiFooterMenue ul li ul
+  { border: 1px solid #efefef;  }
+
+.bnHelp
+  { background-color: rgba(255, 255, 255, 0.9);
+	  border: 1px dashed #afafaf; }
+
+.bnCurSelectField
+  { border: 1px solid #afafaf;
+    color: #3f3f3f; }
+
+#nav ul li ul
+  { background-color: #fafafa; }
+
+#nav ul ul li a
+  { color: #B7B7B7; }
+
+.chartSubNav{
+	 background-color: rgba(255,255,255,1);
+	 color: #afafaf;
+	 border-bottom: 1px solid #efefef;
+	 border-right: 1px solid #efefef;
+	 border-left: 1px solid #efefef;
+}
+
+/*
+			QV Classes and fixes
+*/
+
+
+.sel-toolbar-cancel{
+  background-color: #efefef;
+  border: 1px solid #afafaf !important;
+  color: #333 !important;
+}
+
+.sel-toolbar-confirm{
+  background-color: #8fc400 !important;
+  border: 1px solid #afafaf !important;
+  color: #333 !important;
+}
+
+.sel-toolbar-cancel:hover{
+  color:#fff !important;
+  background-color: #e0504e !important ;
+}
+
+.sel-toolbar-confirm:hover  {
+  color:#fff !important
+}
+
+
+
+.serverSelected,.serverLocked, .selected {
+  background-color: #8fc400 !important;
+}
+
+.qvLocked  {
+  color: #f48886 !important;
+}
+
+.bnCurSelectField i:hover{
+  color:#333 !important
+}
+
+.cssload-cssload-loader-line-wrap-wrap:nth-child(1) .cssload-loader-line-wrap {
+	border-color: 				#8fc400;
+}
+.cssload-cssload-loader-line-wrap-wrap:nth-child(2) .cssload-loader-line-wrap {
+	border-color: 				rgba(255,255,255,0.06);
+}
+.cssload-cssload-loader-line-wrap-wrap:nth-child(3) .cssload-loader-line-wrap {
+	border-color: 				rgb(254,189,58);
+}
+.cssload-cssload-loader-line-wrap-wrap:nth-child(4) .cssload-loader-line-wrap {
+	border-color: 				rgba(255,255,255,0.08);
+}
+.cssload-cssload-loader-line-wrap-wrap:nth-child(5) .cssload-loader-line-wrap {
+	border-color: 				rgb(120,120,120);
+}
+
+
+.gradientWhiteGrey, #content {
+	background: rgba(255,255,255,1);
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(239,239,239,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(239,239,239,1)));
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(239,239,239,1) 100%);
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(239,239,239,1) 100%);
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(239,239,239,1) 100%);
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(239,239,239,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#efefef', GradientType=0 );
+}
+
+
+
+#header, #footer {
+  background: #8fc400; /* Old browsers */
+  background: -moz-linear-gradient(top, #8fc400 0%, #8fc400 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #8fc400 0%,#8fc400 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #8fc400 0%,#8fc400 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fc400', endColorstr='#8fc400',GradientType=0 ); /* IE6-9 */
+
+}
+
+@media screen and (min-width: 601px) {
+    #container{
+      -webkit-box-shadow: 8px 11px 5px -4px rgba(0,0,0,0.48);
+      -moz-box-shadow: 8px 11px 5px -4px rgba(0,0,0,0.48);
+      box-shadow: 8px 11px 5px -4px rgba(0,0,0,0.48);
+    }
+
+    body {
+  		background: url("../img/bg2.jpg");
+  		background-size:cover;
+  	}
+
+    #nav ul ul li a:hover:not(.active) {
+    		background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%); /* FF3.6-15 */
+    		background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* Chrome10-25,Safari5.1-6 */
+    		background: linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+
+    }
+
+    #nav ul li ul {
+    		-webkit-box-shadow: 5px 5px 5px -3px rgba(120,114,120,1);
+    		-moz-box-shadow: 5px 5px 5px -3px rgba(120,114,120,1);
+    		box-shadow: 5px 5px 5px -3px rgba(120,114,120,1);
+    }
+}

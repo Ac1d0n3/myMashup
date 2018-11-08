@@ -1,0 +1,445 @@
+/*
+		Main
+*/
+
+body, html{
+	overflow: hidden; height: 100vh; width: 100vw;
+  -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none;
+	-moz-user-select: none; -ms-user-select: none; user-select: none;
+}
+
+body, *:not(i):not(.lui-icon){ font-family: QlikView Sans,sans-serif !important; }
+
+body, .qv-object h1 {
+	font-size: 100%; font-weight: normal; overflow: none;
+}
+
+/* QV Classes and fixes */
+.qv-selection-toolbar{ margin-top:43px; }
+.qv-listbox-popover .qv-selection-toolbar{ margin-top:0px; }
+.sel-toolbar-menu { max-height:100px !important; height:100px !important; }
+.qv-listbox-popover .sel-toolbar-menu { max-height:170px !important;height:170px !important;}
+*, *:before, *:after { box-sizing: inherit; }
+* { box-sizing: border-box; margin:0; padding:0; }
+.clearfix::before  { content: ""; clear: both; display: table; }
+.hideObject, .lScreen { display: none; }
+
+.ui-datepicker{
+	z-index:9999 !important
+}
+/*
+		SideBar
+*/
+.sideWrapper
+{ display: grid; box-sizing: border-box;
+	height: -moz-calc(94vh - 95px); height: -webkit-calc(94vh - 95px); height: calc(94vh - 95px);
+	grid-template-columns: auto; grid-template-rows: 30px auto;
+  grid-template-areas:
+    "groupnav"
+    "sidegroup"
+}
+
+.filterGroupNav{
+	position: relative; grid-area: groupnav; display: block;
+	box-sizing: border-box; height: 30px; padding: 5px;
+}
+
+.sidegroup{
+  grid-area: sidegroup; position: relative; padding: 5px;
+  overflow:auto; height:auto; width: auto; display:block;
+}
+
+.sidegroup h1 { font-size: 1em !important; }
+.filterGroupNav i{ cursor: pointer; margin-left: 3px; }
+.bnSliderDiv{ margin:10px; }
+.bnButton{ font-size: 0.60em; font-weight: bold !important; }
+.qvobjectside { position: relative; display: block; width: 100%; height: 200px ; }
+.ui-selectmenu-button{ font-size: 0.80em; width: 8vw; position: relative; }
+.sliderLabel{ margin-top: 10px; padding: 5px; font-size: 0.75em; font-weight: bold; }
+.sliderValue{ padding: 5px; font-size: 0.75em; }
+
+/* qvToolBar */
+.qvToolbar
+{ position: absolute; top: 0; left: 13px; width:auto; padding: 2px ; border-radius: 0 0 5px 5px; }
+.qvToolbar i{ margin-left:5px; }
+
+/* Current Selection Bookmarks */
+.curSelectionBox
+{ padding-left:5px; border-bottom: 1px solid #efefef; height: 50%; overflow:auto; }
+.bookmarkList
+{ list-style: none; font-size: 0.75em; padding: 5px; overflow: auto; height: 30%}
+.bookmarkList li a
+{ display: block; font-size: 12px; margin-bottom: 5px; padding: 5px; border-radius: 5px; cursor: pointer; }
+.curSelectionBoxHeader, .bookmarkHeader
+{ font-size: 0.75em; padding: 5px; font-weight: bold; }
+.bnCurSelectField
+{ font-size: 0.75em; width: auto; display: inline-block; margin: 2px; padding: 4px; border-radius: 4px; }
+.bnCurSelectField span{ margin-right:5px; }
+.bnCurSelectField i{ cursor: pointer; font-size: 0.8em;}
+
+/*  Help Box  */
+.bnHelp
+{ display: none; box-sizing: border-box; text-align: center; vertical-align: middle;
+	overflow-x:	hidden; overflow-y:	auto; position: absolute; z-index: 8888;
+	left: 0; top: 0; width: 100%; height: 100%; padding: 5px; }
+
+
+/*****************************************************
+			Page Layout
+******************************************************
+/* Loading Overlay */
+#Overlay {
+	overflow: none;
+	z-index: 9999;
+	position: absolute;
+	display: grid;
+	height: 100vh;
+	width: 100vw;
+	grid-template-columns: auto;
+	grid-template-rows: 40px auto 40px;
+	grid-template-areas:
+		"headerOverlay"
+		"contentOverlay"
+		"footerOverlay";
+}
+
+#headerOverlay {
+	text-align: center;
+	font-size: 0.75em;
+	border-radius:   15px 15px 0 0;
+	grid-area: headerOverlay;
+}
+
+#headerOverlay h1 {
+	padding-top:5px;
+	font-size: 1em;
+}
+
+#contentOverlay {
+  position: relative;
+	grid-area: contentOverlay;
+  width:auto;
+	padding-top: 20px;
+	text-align: center;
+}
+
+#OverlayTitle {
+  text-align: center;
+  width: 100%;
+}
+
+#innerOverlay{
+  z-index: 99999;
+  position: relative;
+  grid-area: main;
+  height: 100%;
+  width: 100%;
+}
+
+.cssload-loader-inner{
+	position:absolute;
+  width: 200px;
+  top: 20%;
+  left: 50%;
+  right: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+/*  Nav  */
+#nav {
+	position: relative;
+	width:auto;
+	font-size: 1em;
+	margin-top: 10px;
+	margin-left: 80px;
+	height: 30px;
+}
+#nav ul li  {
+  position: relative;
+	float:left;
+	display: block;
+  margin-left: 1px;
+}
+#nav ul li a i.navright{
+  display:none;
+}
+#nav ul li ul li a i.navright{
+  display:block;
+}
+#nav ul li a {
+  position: relative;
+	padding: 8px 8px 3px 8px;
+	display: block;
+	white-space: nowrap;
+	text-decoration: none;
+	border-radius: 5px 0 0 0;
+}
+
+#nav ul li {
+	border-radius: 5px 0 0 0;
+}
+
+#nav ul li ul li a, #nav ul li ul li ul li a{
+  position: relative;
+	padding: 8px 8px 3px 8px;
+	display: block;
+	white-space: nowrap;
+	text-decoration: none;
+	border-radius: 0;
+}
+
+#nav ul li ul, #nav ul li ul li ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  opacity:0;
+	  z-index: 99999;
+  -webkit-transition:opacity 0.1s linear, visibility 0.1s linear;
+  -moz-transition:opacity 0.1s linear, visibility 0.1s linear;
+  -o-transition:opacity 0.1s linear, visibility 0.1s linear;
+  transition:opacity 0.1s linear, visibility 0.1s linear;
+}
+
+#nav ul li ul li ul {
+	position: relative;
+	visibility:hidden;
+
+	opacity:1;
+	margin-left: 20px;
+	width:250px;
+}
+
+#nav ul li ul{
+	position: fixed;
+	visibility:hidden;
+	width:100%;
+	left:0;
+
+}
+
+#nav ul li ul a span.lScreen, #nav ul li ul li ul a span.lScreen{
+    display: inline-block;
+}
+
+#nav li:hover  ul {
+  visibility:visible;
+  opacity:1;
+}
+
+#nav ul li ul li {
+	float:none;
+}
+#nav ul li ::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+#content > div {
+	position: relative;
+	width: 100%;
+	padding: 0;
+	margin:0;
+	height: 100%;
+}
+
+
+
+/*  Page  */
+
+.logo{
+	box-sizing: border-box;
+	position: absolute;
+	width: 38px;
+	height: 38px;
+	z-index: 99;
+}
+
+.logo div {
+	width: 25px;
+	height: 25px;
+	display: block;
+	margin-top:5px;
+	margin-left:5px;
+	box-sizing: border-box;
+}
+
+#container {
+	overflow: none;
+	position: relative;
+	display: grid;
+	height:100vh;
+	width: 100vw;
+	grid-template-columns: auto 100px ;
+	grid-template-rows:  40px auto 40px;
+	grid-template-areas:
+		"header header"
+		"main main"
+		"footer footer";
+
+}
+
+#header {
+  position: relative;
+  grid-area: header;
+	border-bottom: 1px solid #efefef;
+	width:100%;
+}
+
+#content{
+	position: relative;
+	box-sizing: border-box;
+	height:auto;
+	width:auto;
+  grid-area: main;
+	overflow: hidden;
+	padding: 5px;
+}
+
+#sidebar-left {
+	position: relative;
+  grid-area: sl;
+	display:none;
+	box-sizing: border-box;
+	height:auto;
+	width:auto;
+  margin-bottom: 7px;
+	overflow: none;
+}
+
+#sidebar-right {
+	position: relative;
+  grid-area: sr;
+	display:none;
+  margin-bottom: 7px;
+}
+
+
+#sidebarmenu{
+	box-sizing: border-box;
+	position: absolute;
+	font-size: 13px;
+	width: auto;
+	right: 15px;
+	top:20px;
+	height: 25px;
+	padding-left:5px;
+	padding-top:5px;
+	padding-right:5px;
+	border-radius:   5px 5px 0 0;
+}
+
+#footer {
+  position: relative;
+	padding-top: 8px;
+	text-align: right;
+	font-size:0.75em;
+  grid-area: footer;
+}
+
+#footerText{
+  padding: 5px;
+  width: auto;
+}
+
+
+
+@media screen and (min-width: 769px) {
+
+	#nav ul li ul, #nav ul li ul li ul {
+		  position: absolute;
+		  width:250px;
+			visibility: hidden;
+	}
+
+	#nav li:hover  ul {
+	  visibility:hidden;
+	  opacity:1;
+	}
+
+	#nav li:hover > ul {
+	  visibility:visible;
+	  opacity:1;
+	}
+
+	#nav ul li ul li ul {
+	    top: 0;
+	    left: 247px;
+			margin: 0;
+	}
+
+	#nav ul li ul  {
+	    top: 30px;
+
+	}
+
+	.logo {
+			width: 48px;
+			height: 48px;
+			left:15px;
+			top: -10px;
+			border-radius:  10px 10px  0 0;
+		}
+	.logo div {
+		width: 30px;
+		height: 30px;
+		margin-top:9px;
+		margin-left:9px;
+	}
+
+	.lScreen{ display: inline-block; }
+
+  #header {
+    grid-area: header;
+    border-bottom: 1px solid #efefef;
+    background-color: #8fc400;
+    border-radius:   10px 10px 0 0;
+  }
+
+	#content > div { width: 100%; height: 100%; }
+	#content  { overflow: hidden; padding: 0 5px 0 5px; }
+
+	#footer {
+  	text-align: center;
+		border-radius:  0 0 10px 10px ;
+	}
+  #footerText{ margin: 0 auto; width: 50%; padding: 0; }
+
+	#container, #Overlay {
+		margin-top: 3vh;
+		margin-right:3vw;
+		margin-left:3vw;
+		display: grid;
+		height: 94vh;
+		width: 94vw;
+		border-radius:   10px 10px 10px 10px;
+	}
+
+	#container {
+		position: relative;
+		display: grid;
+	  grid-template-columns: 20vw auto 20vw;
+	  grid-template-rows: 40px auto 30px;
+	  grid-template-areas:
+	    "header header header"
+	    "main main main"
+	    "footer footer footer";
+	}
+
+	#Overlay {
+		position: absolute;
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: 50px auto 30px;
+		grid-template-areas:
+	    "headerOverlay"
+	    "contentOverlay"
+	    "footerOverlay";
+	}
+
+	#headerOverlay h1 {
+		padding-top:5px;
+		font-size: 1.4em;
+	}
+
+}

@@ -1,0 +1,78 @@
+<div id="dashboard">
+  <div class="viewGrid">
+
+    <div class="kpi{{responiveClass}}" ng-repeat="kpi in kpis">
+      <div ng-bind-html="kpi.helpText|html" class="bnHelp hideObject"></div>
+      <div class="kpiHeader" style="background-color:{{kpi.bgcolor}};color:{{kpi.textcolor}}">
+        <div class="kpiHeaderLabel"><i class="{{kpi.icon}}" aria-hidden="true"></i> {{kpi.label}}</div>
+      </div>
+
+      <div class="kpiContent">
+
+          <div ng-hide="kpi.toggle_y2yView" class="y2yView ">
+            <table><thead><tr><td> <i class="fas fa-hashtag"></i> </td><td> <i ng-show="kpi.distinct" title="distinct" class="fas fa-key"></i></td><td><i ng-show="kpi.showNoDistinctAsSecond" title="no distinct"  class="fas fa-project-diagram"></i> </td>
+                <td> </td></tr></thead>
+            <tbody><tr><td class="cyLabel"> </td><td class="cyValue {{kpi.id}}cy"> </td><td class="cyValue {{kpi.id}}cyNoDistinct"> </td>
+                <td> </td></tr>
+              <tr><td class="lyLabel"> </td><td class="lyValue {{kpi.id}}ly"> </td><td class="lyValue {{kpi.id}}lyNoDistinct"> </td>
+                <td> </td></tr>
+              <tr><td class="totalLabel">{{total}}</td><td class="totalValue {{kpi.id}}total"> </td><td class="totalValue {{kpi.id}}totalNoDistinct"> </td>
+                <td> </td></tr></tbody>
+            </table>
+            <div id="{{kpi.id}}chart" class="kpiChart"></div>
+          </div>
+
+          <div ng-show="kpi.toggle_QuarterView" class="kpiQuarterView">
+              <table ng-hide="kpi.toggle_QuarterViewInline">
+                <thead><tr><td width="10%"> </td><td width="45%" class="cyLabel"> </td><td width="45%" class="lyLabel"> </td></tr></thead>
+                <tbody><tr><td class="quarterLabel"> {{quarterSign}}1 </td><td class="{{kpi.id}}{{quarterSign}}1cy cyValue"> </td><td class="{{kpi.id}}{{quarterSign}}1ly lyValue"> </td></tr>
+                <tr><td class="quarterLabel"> {{quarterSign}}2 </td><td class="{{kpi.id}}{{quarterSign}}2cy cyValue"> </td><td class="{{kpi.id}}{{quarterSign}}2ly lyValue"> </td></tr>
+                <tr><td class="quarterLabel"> {{quarterSign}}3 </td><td class="{{kpi.id}}{{quarterSign}}3cy cyValue"> </td><td class="{{kpi.id}}{{quarterSign}}3ly lyValue"> </td></tr>
+                <tr><td class="quarterLabel"> {{quarterSign}}4 </td><td class="{{kpi.id}}{{quarterSign}}3cy cyValue"> </td><td class="{{kpi.id}}{{quarterSign}}3ly lyValue"> </td></tr></tbody>
+              </table>
+              <div ng-show="kpi.toggle_QuarterViewInline" id="{{kpi.id}}quarterchart" class="kpiChartFull"></div>
+          </div>
+
+          <div ng-show="kpi.toggle_Top5View" class="kpiTop5View">
+            <table ng-hide="kpi.toggle_Top5ViewInline">
+              <thead><tr><td width="10%"></td><td width="45%"> <i class="fas fa-hashtag"></i> Top 5 </td><td width="45%" class="totalValue"><i ng-if="kpi.showTopOverall == true" class="fas fa-star fa-fw"></i><span class="{{kpi.id}}totalTop5 "></span></td>
+              </tr><tr><td></td><td class="cyLabel"> </td><td class="lyLabel"></td></tr></thead>
+              <tbody><tr><td>1</td><td class="{{kpi.id}}cy1Top5 cyValue"> </td><td class="{{kpi.id}}ly1Top5 lyValue"> </td></tr>
+                <tr><td>2</td><td class="{{kpi.id}}cy2Top5 cyValue"> </td><td class="{{kpi.id}}ly2Top5 lyValue"> </td></tr>
+                <tr><td>3</td><td class="{{kpi.id}}cy3Top5 cyValue"> </td><td class="{{kpi.id}}ly3Top5 lyValue"> </td></tr>
+                <tr><td>4</td><td class="{{kpi.id}}cy4Top5 cyValue"> </td><td class="{{kpi.id}}ly4Top5 lyValue"> </td></tr>
+                <tr><td>5</td><td class="{{kpi.id}}cy5Top5 cyValue"> </td><td class="{{kpi.id}}ly5Top5 lyValue"> </td></tr></tbody>
+            </table>
+            <div ng-show="kpi.toggle_Top5ViewInline" class="top5Grid"><div class="cyLabel"></div><div class="lyLabel"></div><div id="{{kpi.id}}top5chartCY" class="kpiChartHalf"></div><div id="{{kpi.id}}top5chartLY" class="kpiChartHalf"></div></div>
+          </div>
+
+      </div>
+      <div class="kpiFooter">
+        <div class="kpiFooterMenue">
+
+             <ul>
+             <li ng-click="toggleY2YView(kpi)"><span ng-class="kpi.toggle_y2yView == undefined || kpi.toggle_y2yView == false ? 'active' : ''"><i class="fas fa-history fa-fw"></i> Y2Y</span></li>
+
+             <li ng-if="kpi.showQuarterView == true" ng-click="toggleQuarterView(kpi)">
+               <span  ng-class="kpi.toggle_QuarterView == true ? 'active' : ''"><i class="far fa-calendar-alt fa-fw"> </i> Quarter</span>
+               <ul ng-show="kpi.QuarterBarChart == true">
+                 <li ng-click="toggleQuarterInlineView(kpi)"><span ng-class="kpi.toggle_QuarterViewInline == true ? 'active' : ''"><i class="fas fa-chart-bar fa-fw"></i> Chart</span></li>
+                 <li ng-click="toggleQuarterInlineView(kpi)"><span ng-class="kpi.toggle_QuarterViewInline == false ||  kpi.toggle_QuarterViewInline == undefined ? 'active' : ''"><i class="fas fa-table"></i> Table</span></li>
+               </ul>
+             </li>
+             <li ng-click="toggleTop5View(kpi)" >
+               <span ng-if="kpi.showTop5 == true" ng-class="kpi.toggle_Top5View == true ? 'active' : ''"><i class="fas fa-star fa-fw"> </i> Top5</span>
+               <ul ng-show="kpi.showTop5Chart == true">
+                  <li ng-click="toggleTop5InlineView(kpi)"><span ng-class="kpi.toggle_Top5ViewInline == true ? 'active' : ''"><i  class="fas fa-chart-bar fa-fw"></i> Chart </span></li>
+                  <li ng-click="toggleTop5InlineView(kpi)"><span ng-class="kpi.toggle_Top5ViewInline == false || kpi.toggle_Top5ViewInline == undefined ? 'active' : ''"><i class="fas fa-table"></i> Table </span></li>
+               </ul>
+             </li>
+           </ul>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
